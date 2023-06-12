@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+  rsnapshot:
+    build:
+      context: ./build/rsnapshot
+    ports:
+      - 2222:22/tcp
+    environment:
+      - PUID=0
+      - PGID=0
+    volumes:
+      - ./config/ssh:/root/.ssh:ro
+      - ./config/ssh/sshd_config:/etc/ssh/sshd_config:ro
+      - ./config/rsnapshot/rsnapshot.conf:/config/rsnapshot.conf:ro
+      - ./data/backups:/backups
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    command: >
+      /bin/sh -c '/usr/sbin/sshd -D -e -f /etc/ssh/sshd_config'
