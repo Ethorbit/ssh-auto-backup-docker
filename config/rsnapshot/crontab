@@ -1,0 +1,4 @@
+0 * * * * /usr/bin/rsnapshot hourly
+0 0 * * * /usr/bin/rsnapshot daily
+0 0 * * 0 /usr/bin/rsnapshot weekly
+0 0 1 * * /usr/bin/rsnapshot monthly

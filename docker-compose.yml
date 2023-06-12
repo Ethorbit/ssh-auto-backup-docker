@@ -12,6 +12,7 @@ services:
       - ./config/ssh:/root/.ssh:ro
       - ./config/ssh/sshd_config:/etc/ssh/sshd_config:ro
       - ./config/rsnapshot/rsnapshot.conf:/config/rsnapshot.conf:ro
+      - ./config/rsnapshot/crontab:/config/crontabs/root
       - ./data/backups:/backups
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
