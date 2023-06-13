@@ -18,3 +18,4 @@ services:
       - /etc/timezone:/etc/timezone:ro
     command: >
       /bin/sh -c '/usr/sbin/sshd -D -e -f /etc/ssh/sshd_config'
+    restart: unless-stopped
