@@ -2,3 +2,7 @@ Host example.com
     Match user example
         Port 22
         IdentityFile ~/.ssh/key_example
+
+Host *
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
